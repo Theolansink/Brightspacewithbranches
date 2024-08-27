@@ -71,6 +71,6 @@ jobs:
       run: |-
         if kubectl get deployment myfirst-deployment;
            then kubectl delete deployment/myfirst-deployment; fi
-        kubectl apply -f deployment.yaml -namespace production
-        kubectl apply -f service.yaml -namespace production
+        kubectl apply -f deployment.yaml --namespace production
+        kubectl apply -f service.yaml --namespace production
         kubectl get pods
