@@ -69,7 +69,7 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        if kubectl get deployment myfirst-deployment -- namespace production;
+        if kubectl get deployment myfirst-deployment --namespace production;
            then kubectl delete deployment/myfirst-deployment --namespace production; fi
         kubectl apply -f deployment.yaml --namespace production
         kubectl apply -f service.yaml --namespace production
