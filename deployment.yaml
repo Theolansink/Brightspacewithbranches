@@ -1,17 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myfirst-deployment
+  name: blue-deployment
 spec:
   replicas: 1  # Number of instances (pods) to run
   selector:
     matchLabels:
       app: my-container
+      env: blue
 # everything under template is the definition of the pod that will be created.      
   template:
     metadata:
       labels:
         app: my-container
+        env: blue
     spec:
       containers:
       - name: web-app
