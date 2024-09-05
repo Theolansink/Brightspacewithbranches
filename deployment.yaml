@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myfirst-deployment
+  name: green-deployment
 spec:
   replicas: 1  # Number of instances (pods) to run
   selector:
     matchLabels:
       app: my-container
+      env: green
 # everything under template is the definition of the pod that will be created.      
   template:
     metadata:
       labels:
         app: my-container
+        env: green
     spec:
       containers:
       - name: web-app
-        image: us-central1-docker.pkg.dev/kubernetis-291512/dockercontainer/mycontainer:latest
+        image: us-central1-docker.pkg.dev/kubernetis-291512/dockercontainer/greencontainer:latest
 #        image: theolansink/container:latest
         imagePullPolicy: Always
         ports:

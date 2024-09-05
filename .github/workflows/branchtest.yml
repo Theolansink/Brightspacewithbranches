@@ -21,7 +21,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: autopilot-cluster-1    # cluster name
   GKE_ZONE: us-central1   # cluster zone
-  IMAGE: mycontainer # image name
+  IMAGE: greencontainer # image name
   IMAGE_TAG: latest # image tag
   GAR_ZONE: us-central1 # artifact registry zone
   GAR_REPO: dockercontainer # artifact registry repository
@@ -69,8 +69,8 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        if kubectl get deployment myfirst-deployment --namespace test;
-           then kubectl delete deployment/myfirst-deployment --namespace test; fi
-        kubectl apply -f deployment.yaml --namespace test
-        kubectl apply -f service.yaml --namespace test
+        if kubectl get deployment green-deployment;
+           then kubectl delete deployment/green-deployment; fi
+        kubectl apply -f deployment.yaml
+        kubectl apply -f service.yaml
         kubectl get pods
