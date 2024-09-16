@@ -76,6 +76,7 @@ jobs:
         kubectl get pods
 
     # integrate postman
+    - uses: actions/checkout@v4
     - name: Install Postman CLI
       run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
