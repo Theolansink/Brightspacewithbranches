@@ -85,5 +85,4 @@ jobs:
     - name: Run API tests
       run: |
           postman collection run "${{ github.workspace }}/postman/collections/Integration testing basics.json"
-          # Lint your API using Postman CLI
-          postman api lint f9822bda-31de-4999-b3e2-90679e6fc659
+         
