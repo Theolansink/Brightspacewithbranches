@@ -66,6 +66,21 @@ jobs:
       run: |-
         docker push "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
 
+    - name: Docker Scout CVEs
+      uses: docker/scout-action@v1.5.0
+      with:
+          command: cves
+          image: "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
+          # only-fixed: true
+          only-severities: critical,high
+          ignore-base: false
+          ignore-unchanged: false
+          write-comment: true
+          # github-token: ${{ secrets. GITHUB_TOKEN }} # to be able to write the
+          comment
+          exit-code: true
+          exit-on: vulnerability
+
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
