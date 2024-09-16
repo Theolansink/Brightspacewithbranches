@@ -79,7 +79,7 @@ jobs:
           # github-token: ${{ secrets. GITHUB_TOKEN }} # to be able to write the comment
           exit-code: true
           exit-on: vulnerability
-
+          
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
@@ -89,12 +89,12 @@ jobs:
         kubectl apply -f service.yaml --namespace test
         kubectl get pods
 
-      - name: Install Postman CLI
-        run: |
+     - name: Install Postman CLI
+       run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-      - name: Login to Postman CLI
+     - name: Login to Postman CLI
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
-      - name: Run API tests
+     - name: Run API tests
         run: |
           # Lint your API using Postman CLI
           postman api lint f9822bda-31de-4999-b3e2-90679e6fc659 --integration-id 168614
