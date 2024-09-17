@@ -13,13 +13,16 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "af93ceeb-bf8e-47c8-91f9-8b93fcbc88a4",
+						"id": "f525e18f-bab4-4cf7-a98b-906842e88f5d",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"pm.test(\"Response time is less than 200ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Brightspace\");",
 							"});",
 							"",
 							""
