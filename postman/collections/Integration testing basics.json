@@ -46,13 +46,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://34.132.128.43",
+					"raw": "http://34.134.188.155",
 					"protocol": "http",
 					"host": [
 						"34",
-						"132",
-						"128",
-						"43"
+						"134",
+						"188",
+						"155"
 					]
 				},
 				"description": "This request uses the saved `token` collection variable to access a secret 'name' stored against that token.\n\nIn this request, we used the `token` collection variable as a query param to fetch the name generated for that token. We have added a test to check that a name is correctly returned."
@@ -64,34 +64,35 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "5c1b9714-10d1-478f-bec5-e8052e26dc00",
 				"type": "text/javascript",
 				"exec": [
 					""
-				],
-				"id": "7469198a-72ff-4d30-9d36-a0ffa5a62d39"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "798c38f0-58e5-48f2-8c51-5ccee86084ca",
 				"type": "text/javascript",
 				"exec": [
 					""
-				],
-				"id": "d4c8cdf1-c8fe-49ac-aa59-06a38d0c758a"
+				]
 			}
 		}
 	],
 	"variable": [
 		{
-			"id": "971d3649-3c0c-4f64-bfa7-f9d6954b3e6c",
+			"id": "30f6a60b-2689-4dd2-8bda-86cacb4b6fc0",
 			"key": "token",
 			"value": ""
 		},
 		{
-			"id": "35d28917-594f-4251-8372-1d1b49bb00c5",
-			"key": "baseUrl",
-			"value": "https://postman-integration-testing.glitch.me/"
+			"id": "a250a0f3-0a54-4d18-9a3c-072051185c70",
+			"key": "baseURL",
+			"value": "http://34.134.188.155",
+			"type": "string"
 		}
 	]
 }
